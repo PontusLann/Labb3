@@ -1,6 +1,8 @@
 
 using ClassLibrary1;
+using Microsoft.VisualBasic.ApplicationServices;
 using System.Text;
+using static System.Windows.Forms.DataFormats;
 
 namespace Translator_v1._0
 {
@@ -97,7 +99,8 @@ namespace Translator_v1._0
         {
 
             string[] row = wordsAddedTextBox.Text.Split(";", StringSplitOptions.RemoveEmptyEntries);
-
+            langCount = 0;
+            label3.Text = currentFile.Languages[0];
 
             if (row.Length != currentFile.Languages.Length)
             {
@@ -132,8 +135,6 @@ namespace Translator_v1._0
 
         private void addButton_Click(object sender, EventArgs e)
         {
-
-            List<string> addWords = new List<string>();
 
             langCount++;
 
@@ -171,14 +172,15 @@ namespace Translator_v1._0
         private void toTextBox_KeyDown(object sender, KeyEventArgs e)
         {
 
+            Image img = Image.FromFile("C:\\Users\\pontus lann\\Downloads\\borat.jpg");
+
             if (e.KeyCode == Keys.Enter)
             {
                 doneButton.Enabled = true;
                 nextButton.Enabled = true;
                 if (toTextBox.Text == practice.Translations[1])
                 {
-                    label6.Text = "Correct!";
-                    label6.Visible = true;
+                    tabPage2.BackgroundImage = img;
                     guesses++;
                     correctGuesses++;
                 }
@@ -198,7 +200,7 @@ namespace Translator_v1._0
             label6.Visible = false;
             nextButton.Enabled = false;
             Practice();
-
+            tabPage2.BackgroundImage = default;
         }
 
         void Practice()

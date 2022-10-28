@@ -6,6 +6,7 @@ string localAppDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.
 
 string pathToLabb3Folder = Path.Combine(localAppDataFolder, "Labb3");
 
+string input = string.Empty;
 
 
 
@@ -21,7 +22,6 @@ void Alternatives()
     Console.WriteLine("-practice <listname>");
 }
 
-string input = string.Empty;
 
 do
 {
@@ -75,11 +75,8 @@ do
             {
                 Console.WriteLine("Wrong input!");
             }
-
             break;
         case "-add":
-
-
             void add()
             {
                 string currentPathAdd = Path.Combine(pathToLabb3Folder, inputToArray[1]);
@@ -111,7 +108,6 @@ do
                 {
                     Console.WriteLine("You have exited add mode");
                 }
-
             }
             if (inputToArray.Length == 2)
             {
@@ -129,12 +125,8 @@ do
             {
                 Console.WriteLine("Wrong input");
             }
-
-
-
             break;
         case "-remove":
-
             if (inputToArray.Length >= 4)
             {
                 string currentPathRemove = Path.Combine(pathToLabb3Folder, inputToArray[1]);
@@ -175,10 +167,8 @@ do
             {
                 Console.WriteLine("Wrong input!");
             }
-
             break;
         case "-words":
-
             if (inputToArray.Length == 2 || inputToArray.Length == 3)
             {
                 string currentPathWords = Path.Combine(pathToLabb3Folder, inputToArray[1]);
@@ -218,10 +208,8 @@ do
             {
                 Console.WriteLine("Wrong input!");
             }
-
             break;
         case "-count":
-
             if (inputToArray.Length == 2)
             {
                 string currentPathCount = Path.Combine(pathToLabb3Folder, inputToArray[1]);
@@ -242,7 +230,6 @@ do
             }
             break;
         case "-practice":
-
             if (inputToArray.Length == 2)
             {
                 string currentPathPractice = Path.Combine(pathToLabb3Folder, inputToArray[1]);
@@ -295,10 +282,7 @@ do
             {
                 Console.WriteLine("Wrong input!");
             }
-
-
             break;
-
         default:
             if (input == string.Empty)
             {
